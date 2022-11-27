@@ -1,18 +1,11 @@
 from django.shortcuts import render, HttpResponseRedirect
 from .forms import StudentRegistration
 from .models import User
-from .serializers import UserSerializer
-from rest_framework import viewsets
 from django.views.generic.base import TemplateView, RedirectView
 from django.views import View
 # Create your views here.
 
 # This Class Will Add new Item and Show All Items
-class UserViewSet(viewsets.ModelViewSet):
- queryset = User.objects.all()
- serializer_class = UserSerializer
-
-
 class UserAddShowView(TemplateView):
   template_name = 'enroll/addandshow.html'
   def get_context_data(self, *args, **kwargs):

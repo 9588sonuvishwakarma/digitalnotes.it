@@ -123,3 +123,11 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES':('rest_framework.renderers.JSONRenderer',)
 }
+
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_RATES':{
+        'anon': '5/minute',
+        'user': '10/minute',
+        
+    }
+}
